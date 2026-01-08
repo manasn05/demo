@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx-deployment
+  name: my-app
 spec:
   selector:
     matchLabels:
-      app: nginx_deploy
+      app: my-app
   replicas: 2
   template:
     metadata:
       labels:
-        app: nginx_deploy
+        app: my-app
     spec:
       containers:
-        - name: nginx
-          image: nginx:1.28.0
+        - name: my-app
+          image: 007manas/shopfront:v01
           ports:
             - containerPort: 80
